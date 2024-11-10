@@ -1,0 +1,11 @@
+@import '../common/tailwind.css';
+@import '../common/common.css';
+@import '../common/fonts.css';
+@import '../common/buttons.css';
+@import '../common/post-content.css';
+@import 'scrollbar.css';
+@import 'default.css';
+
+@import 'components/_index.css';
+
+@config './all.config.js';

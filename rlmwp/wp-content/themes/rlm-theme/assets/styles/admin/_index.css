@@ -1,0 +1,8 @@
+@import './tailwind.css';
+@import './blocks.css';
+@import './user-edit.css';
+@import '../common/fonts.css';
+@import '../common/buttons.css';
+@import '../common/post-content.css';
+
+@config './admin.config.js';

@@ -1,0 +1,274 @@
+html {
+   @apply font-primary h-full;
+}
+
+body.login {
+   @apply flex flex-col min-h-full relative bg-cover bg-top bg-no-repeat bg-white;
+}
+
+body.login:before {
+   content: '';
+   @apply w-full h-0.5 absolute left-0 top-0 z-10 bg-neutral-500 lg:flex hidden;
+}
+
+body.login * {
+   @apply outline-none shadow-none;
+}
+
+body.login .icon-check-contained {
+   @apply w-4 h-4 inline-block bg-no-repeat bg-contain bg-center bg-[url('../icons/check-contained.svg')];
+}
+
+body.login form::before {
+   @apply content-[''] bg-white bg-opacity-50 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[105%] h-[105%] absolute blur-[2px] z-0 lg:bg-transparent lg:bg-opacity-100 lg:bg-gradient-to-b lg:from-white/20 lg:to-transparent;
+   -webkit-backdrop-filter: blur(2px);
+   background-clip: padding-box;
+   background-origin: padding-box;
+   background-size: cover;
+   backdrop-filter: blur(2px);
+}
+
+body.login label {
+   @apply block text-xs font-semibold text-neutral-500 mb-2 text-left;
+}
+
+body.login .language-switcher {
+   @apply hidden;
+}
+
+body.login #login {
+   @apply w-full flex items-center flex-col mt-0 mx-auto relative max-w-[37.9375rem] px-6;
+}
+
+body.login-action-confirm_admin_email #login {
+   @apply lg:max-w-[64rem] max-w-full mb-[5rem];
+}
+
+body.login h1:nth-child(1) {
+   @apply flex justify-center items-end w-full h-fit max-w-[37.9375rem] mt-[7.875rem] mb-3 lg:mt-16 lg:mb-16;
+}
+
+body.login h1 a {
+   @apply pointer-events-none;
+}
+
+body.login h1:nth-child(1) a {
+   text-indent: -9999px;
+   @apply bg-contain w-full h-[2.875rem] m-0 block bg-no-repeat max-w-[245px] relative bg-center lg:max-w-[11.25rem] lg:h-[1.6506rem] bg-[url('../icons/logo-login.svg')];
+}
+
+body.login-action-confirm_admin_email h1:nth-child(1) {
+   @apply mb-[5rem] !mt-[5rem];
+
+}
+
+body.login:not(.login-action-login) #backtoblog {
+   @apply hidden;
+}
+
+body.login form:not(.admin-email-confirm-form) {
+   @apply flex flex-col relative w-full max-w-[37.9375rem] px-6 py-16 shadow-none overflow-hidden bg-gray-300 bg-opacity-10 mb-[6.25rem] border-solid border-b-2 border-neutral-500 lg:px-16;
+}
+
+body.login form p,
+body.login form div {
+   @apply order-2;
+}
+
+body.login form * {
+   @apply z-10;
+}
+
+body.login form p.submit input[type='submit'] {
+   @apply min-w-full min-h-[2.5rem] mt-[1.875rem] w-full cursor-pointer;
+}
+
+body.login form input[type='text'],
+body.login form input[type='password'] {
+   @apply min-h-[3rem] px-4 border-neutral-200 border placeholder:text-xs placeholder:text-neutral-600 w-full;
+}
+
+body.login .forgetmenot {
+   @apply mt-3 w-fit leading-none;
+}
+
+body.login input[type='checkbox'] {
+   @apply inline-block;
+}
+
+body.login input[type='checkbox']+label {
+   @apply inline-block ml-2 text-neutral-500;
+}
+
+body.login .wp-pwd {
+   @apply relative;
+}
+
+body.login .button.wp-hide-pw {
+   @apply bg-transparent text-sm w-[3rem] h-[3rem] min-w-[3rem] min-h-[3rem] m-0 p-0 absolute right-0 top-0 left-auto;
+}
+
+body.login .button.wp-hide-pw span {
+   background-image: url(../icons/eye-open.svg);
+   @apply bg-no-repeat bg-center bg-cover !w-6 !h-6 block m-auto p-0;
+}
+
+body.login .button.wp-hide-pw span.dashicons-hidden {
+   background-image: url(../icons/eye-closed.svg);
+}
+
+body.login #wp-submit {
+   @apply text-sm leading-6 bg-neutral-500 text-white font-semibold;
+}
+
+body.login #login_error {
+   @apply bg-red-400 bg-opacity-80 text-red-800 text-sm p-3 border border-red-900 mb-2 w-full;
+}
+
+body.login #login-message {
+   @apply w-full;
+}
+
+body.login p#login-message,
+body.login #login-message p {
+   @apply p-3 mb-2 w-full bg-green-400 bg-opacity-80 text-sm text-green-800 border border-green-900 before:inline-block before:-mb-1 before:mr-2 before:w-[1.125rem] before:h-[1.125rem] before:object-contain before:bg-no-repeat before:bg-center before:bg-[url(../../assets/icons/check-contained-green.svg)];
+}
+
+body.login #pass-strength-result {
+   @apply mt-1;
+}
+
+body.login .wp-generate-pw {
+   @apply text-gray-500 text-sm leading-6 mx-auto block;
+}
+
+body.login p.description,
+body.login #pass-strength-result {
+   @apply text-[0.625rem];
+}
+
+body.login .pw-weak {
+   @apply flex items-center;
+}
+
+body.login .pw-weak label {
+   @apply !text-neutral-800 m-0;
+}
+
+body.login .input-strong {
+   @apply !font-normal bg-green-400 border-green-900 border !text-green-800;
+}
+
+body.login .input-short {
+   @apply !font-normal bg-red-400 !border-red-900 !border !text-red-800;
+}
+
+body.login .input-good {
+   @apply !font-normal bg-yellow-400 !border-yellow-900 !border !text-yellow-800;
+}
+
+body.login .privacy-policy-page-link {
+   @apply !hidden;
+}
+
+/*
+Estiliza:
+body.login.login-action-lostpassword,
+body.login.login-action-checkemail,
+body.login.login-action-rp
+*/
+
+body[class*='login-action-']:not(.login-action-login) {
+   background: white !important;
+}
+
+body[class*='login-action-']:not(.login-action-login) form {
+   @apply border-none bg-transparent lg:px-[5rem] py-0 mb-0;
+}
+
+body[class*='login-action-']:not(.login-action-login) form::before {
+   @apply hidden;
+}
+
+body[class*='login-action-']:not(.login-action-login) h1:nth-child(1) {
+   @apply mb-16;
+}
+
+body[class*='login-action-']:not(.login-action-login) h1:nth-child(1) a {
+   @apply bg-[url('../icons/logo-name.svg')];
+}
+
+body.login-action-rp:not(.login-action-login) .reset-pass-submit {
+   @apply mt-6;
+}
+
+body.login.login-action-login form input[type='text']:not(:first-child) {
+   @apply !mb-3;
+}
+
+body.login .notice.notice-info.message {
+   @apply mb-4;
+}
+
+body.login.login-action-login #nav a {
+   @apply mt-[-16.475rem] absolute right-12 text-neutral-500 text-xs leading-6 font-bold lg:right-[8.1rem];
+}
+
+body[class*='login-action-']:not(.login-action-login) #nav a,
+body.login a.login-message-link {
+   @apply text-gray-500 mt-10 block text-center;
+}
+
+body[class*='login-action-']:not(.login-action-login) label {
+   @apply text-neutral-900;
+}
+
+body[class*='login-action-']:not(.login-action-login) #wp-submit {
+   @apply text-sm leading-6 text-white font-semibold;
+}
+
+body[class*='login-action-']:not(.login-action-login):before {}
+
+body.login.login-action-checkemail p#login-message a {
+   @apply text-sm leading-6 text-white mt-[calc(2.4375rem+2.5rem)] w-full max-w-[calc(100%-3rem)] absolute h-10 flex items-center justify-center font-semibold left-1/2 -translate-x-1/2;
+}
+
+body.login:not(.login-action-lostpassword) form input[type='text']:not(:nth-child(1)) {
+   @apply mb-[1.9375rem];
+}
+
+body.login-action-login h1:nth-child(1):after {
+   display: none !important;
+}
+
+body.login-action-login h1:nth-child(1) a:after {
+   display: none !important;
+}
+
+body.login-action-confirm_admin_email h1.admin-email__heading {
+   @apply text-lg font-bold mb-5;
+}
+
+body.login-action-confirm_admin_email .admin-email__details {
+   @apply mb-2 text-sm;
+}
+
+body.login-action-confirm_admin_email .admin-email__details strong {
+   @apply block;
+}
+
+body.login-action-confirm_admin_email .admin-email__actions .admin-email__actions-primary {
+   @apply flex flex-wrap items-center gap-4 w-fit my-4;
+}
+
+body.login-action-confirm_admin_email .admin-email__actions .admin-email__actions-primary a:nth-child(1) {
+   @apply btn btn-cancel w-fit inline-block;
+}
+
+body.login-action-confirm_admin_email .admin-email__actions .admin-email__actions-primary #correct-admin-email {
+   @apply btn btn-primary cursor-pointer;
+}
+
+body.login-action-confirm_admin_email .admin-email__actions .admin-email__actions-secondary a:nth-child(1) {
+   @apply text-gray-300 underline font-medium;
+}

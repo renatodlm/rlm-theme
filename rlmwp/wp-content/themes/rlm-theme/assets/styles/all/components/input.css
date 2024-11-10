@@ -1,0 +1,3 @@
+.example {
+   @apply lg:text-black;
+}

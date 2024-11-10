@@ -1,0 +1,23 @@
+.btn {
+   @apply cursor-pointer px-4 py-2;
+}
+
+.btn-primary {
+   @apply bg-neutral-500 text-white border border-neutral-500;
+}
+
+.btn-secondary {
+   @apply bg-white text-neutral-500 border border-neutral-500;
+}
+
+.btn-success {
+   @apply bg-green-800;
+}
+
+.btn-danger {
+   @apply bg-red-900;
+}
+
+.btn-cancel {
+   @apply border border-neutral-500 text-neutral-500;
+}

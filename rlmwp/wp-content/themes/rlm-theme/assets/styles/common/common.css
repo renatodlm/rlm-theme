@@ -1,0 +1,9 @@
+@import '../../lib/swiper-bundle.min.css';
+
+[x-cloak] {
+   @apply !hidden;
+}
+
+body {
+   -webkit-font-smoothing: 'antialiased';
+}

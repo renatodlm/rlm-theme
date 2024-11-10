@@ -1,0 +1,7 @@
+@import '../common/tailwind.css';
+@import '../common/common.css';
+/* @import '../common/fonts.css'; */
+@import '../common/buttons.css';
+@import './login.css';
+
+@config './login.config.js';

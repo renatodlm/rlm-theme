@@ -1,0 +1,29 @@
+{
+   "name": "rlm-theme",
+   "private": true,
+   "scripts": {
+      "css": "npm run css-all && npm run css-admin && npm run css-login",
+      "css-all": "tailwindcss -i ./rlmwp/wp-content/themes/rlm-theme/assets/styles/all/_index.css -o ./rlmwp/wp-content/themes/rlm-theme/assets/css/all.min.css --minify",
+      "css-all-watch": "tailwindcss -i ./rlmwp/wp-content/themes/rlm-theme/assets/styles/all/_index.css -o ./rlmwp/wp-content/themes/rlm-theme/assets/css/all.min.css --minify --watch",
+      "css-login": "tailwindcss -i ./rlmwp/wp-content/themes/rlm-theme/assets/styles/login/_index.css -o ./rlmwp/wp-content/themes/rlm-theme/assets/css/login.min.css --minify",
+      "css-login-watch": "tailwindcss -i ./rlmwp/wp-content/themes/rlm-theme/assets/styles/login/_index.css -o ./rlmwp/wp-content/themes/rlm-theme/assets/css/login.min.css --minify --watch",
+      "css-admin": "tailwindcss -i ./rlmwp/wp-content/themes/rlm-theme/assets/styles/admin/_index.css -o ./rlmwp/wp-content/themes/rlm-theme/assets/css/admin.min.css --minify",
+      "css-admin-watch": "tailwindcss -i ./rlmwp/wp-content/themes/rlm-theme/assets/styles/admin/_index.css -o ./rlmwp/wp-content/themes/rlm-theme/assets/css/admin.min.css --minify --watch",
+      "js": "wp-scripts build",
+      "js-watch": "wp-scripts start",
+      "assets": "npm run css && npm run js"
+   },
+   "keywords": [],
+   "version": "1.0.0",
+   "author": "Renatodlm",
+   "license": "MIT",
+   "description": "Assets handlers for theme.",
+   "devDependencies": {
+      "@wordpress/scripts": "^26.6.0",
+      "swiper": "^10.1.0",
+      "tailwindcss": "^3.3.1"
+   },
+   "dependencies": {
+      "alpinejs": "^3.14.3"
+   }
+}
