@@ -145,6 +145,8 @@ function rlm_theme_setup()
    // Enable support for post thumbnails.
    add_theme_support('post-thumbnails');
 
+   add_theme_support('title-tag');
+
    // Add support for HTML5 markup.
    add_theme_support(
       'html5',
