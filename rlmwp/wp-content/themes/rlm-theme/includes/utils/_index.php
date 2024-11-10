@@ -139,8 +139,6 @@ class RLM__Utils
    {
       $class_path = self::path_resolve([dirname(THEME_BASE_PATH), 'includes', 'global', "{$class_name}.php"]);
 
-      debug($class_path);
-
       if (file_exists($class_path))
       {
          if ('require_once' === $method)

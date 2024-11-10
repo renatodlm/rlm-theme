@@ -81,7 +81,6 @@ if (!class_exists('RLM_Theme_AutoLoader'))
          $base_dir .= DIRECTORY_SEPARATOR;
 
          $this->prefixes[$prefix][] = $base_dir;
-         debug($this->prefixes);
       }
 
       /**
