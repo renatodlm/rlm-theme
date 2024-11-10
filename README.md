@@ -4,9 +4,9 @@ Tema base para desenvolvimento de temas para clientes.
 
 ## Ambientes
 
-| Ambiente | Branch | `wp_get_environment_type()` | URL                    |
-| -------- | ------ | --------------------------- | ---------------------- |
-| Local    | -      | `local`                     | https://apparel.local/ |
+| Ambiente | Branch | `wp_get_environment_type()` | URL                     |
+| -------- | ------ | --------------------------- | ----------------------- |
+| Local    | -      | `local`                     | https://rlmtheme.local/ |
 
 ---
 
