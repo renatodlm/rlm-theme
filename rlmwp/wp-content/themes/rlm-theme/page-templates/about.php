@@ -12,18 +12,20 @@ get_header();
 
 ?>
 
-<main id="main-content">
+<main id="main-content" class="py-10">
    <section class="about-content">
-      <h1><?php the_title(); ?></h1>
-      <div class="content">
-         <?php
+      <div class="container">
+         <h1><?php the_title(); ?></h1>
+         <div class="content">
+            <?php
 
-         while (have_posts()) :
-            the_post();
-            the_content();
-         endwhile;
+            while (have_posts()) :
+               the_post();
+               the_content();
+            endwhile;
 
-         ?>
+            ?>
+         </div>
       </div>
    </section>
 </main>
