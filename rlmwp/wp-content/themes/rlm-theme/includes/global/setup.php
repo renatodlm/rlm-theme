@@ -12,7 +12,7 @@ if (is_user_logged_in() && !current_user_can('edit_posts'))
 
 add_post_type_support('page', 'excerpt');
 
-add_action('admin_menu', 'rlm_hide_unused_menus');
+// add_action('admin_menu', 'rlm_hide_unused_menus');
 function rlm_hide_unused_menus()
 {
    remove_menu_page('edit.php');
