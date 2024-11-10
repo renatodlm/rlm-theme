@@ -232,7 +232,7 @@ class RLM__Utils
    public static function render_svg(string $file, string $classes = '', bool $echo = true, array $folders = ['assets', 'icons'])
    {
       $file        = str_replace('.svg', '', $file);
-      $file        = self::path_resolve($folders) . "{$file}.svg";
+      $file        = self::path_resolve($folders) . DIRECTORY_SEPARATOR . "{$file}.svg";
       $svg_file    = get_theme_file_path($file);
       $svg_content = '';
 
