@@ -27,6 +27,31 @@ include 'env-local.php';
 
 ---
 
+## Funções
+
+-  debug()
+-  render_svg()
+
+---
+
+## Classes
+
+Adicionar classes em /includes/classes
+
+Exemplo: "/includes/classes/Classe/Classe.php"
+
+Utilizando:
+
+```
+namespace RLM_Theme\Classe\Classe;
+
+$classe = new Classe();
+$value = $classe->get();
+
+```
+
+---
+
 ### Clonar repositório
 
 1. Todos os projetos WordPress devem ficar na mesma pasta localmente.
