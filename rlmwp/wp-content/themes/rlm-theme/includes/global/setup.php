@@ -166,6 +166,12 @@ function rlm_theme_setup()
          'flex-width'  => true,
       )
    );
+
+   register_nav_menus(
+      array(
+         'menu-1' => esc_html__('Primary', 'rlm_theme'),
+      )
+   );
 }
 
 
