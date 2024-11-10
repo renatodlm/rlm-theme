@@ -21,11 +21,11 @@ function rlm_theme_jetpack_setup()
    // Add theme support for Infinite Scroll.
    add_theme_support(
       'infinite-scroll',
-      array(
+      [
          'container' => 'main',
          'render'    => 'rlm_theme_infinite_scroll_render',
          'footer'    => 'page',
-      )
+      ]
    );
 
    // Add theme support for Responsive Videos.
@@ -34,21 +34,21 @@ function rlm_theme_jetpack_setup()
    // Add theme support for Content Options.
    add_theme_support(
       'jetpack-content-options',
-      array(
-         'post-details' => array(
+      [
+         'post-details' => [
             'stylesheet' => 'rlm_theme-style',
             'date'       => '.posted-on',
             'categories' => '.cat-links',
             'tags'       => '.tags-links',
             'author'     => '.byline',
             'comment'    => '.comments-link',
-         ),
-         'featured-images' => array(
+         ],
+         'featured-images' => [
             'archive' => true,
             'post'    => true,
             'page'    => true,
-         ),
-      )
+         ],
+      ]
    );
 }
 

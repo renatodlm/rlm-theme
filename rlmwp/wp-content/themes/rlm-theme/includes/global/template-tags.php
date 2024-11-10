@@ -90,11 +90,11 @@ if (! function_exists('rlm_theme_entry_footer')) :
                wp_kses(
                   /* translators: %s: post title */
                   __('Leave a Comment<span class="screen-reader-text"> on %s</span>', 'rlm_theme'),
-                  array(
-                     'span' => array(
-                        'class' => array(),
-                     ),
-                  )
+                  [
+                     'span' => [
+                        'class' => [],
+                     ],
+                  ]
                ),
                wp_kses_post(get_the_title())
             )
@@ -107,11 +107,11 @@ if (! function_exists('rlm_theme_entry_footer')) :
             wp_kses(
                /* translators: %s: Name of current post. Only visible to screen readers */
                __('Edit <span class="screen-reader-text">%s</span>', 'rlm_theme'),
-               array(
-                  'span' => array(
-                     'class' => array(),
-                  ),
-               )
+               [
+                  'span' => [
+                     'class' => [],
+                  ],
+               ]
             ),
             wp_kses_post(get_the_title())
          ),
@@ -148,13 +148,13 @@ if (! function_exists('rlm_theme_post_thumbnail')) :
             <?php
             the_post_thumbnail(
                'post-thumbnail',
-               array(
+               [
                   'alt' => the_title_attribute(
-                     array(
+                     [
                         'echo' => false,
-                     )
+                     ]
                   ),
-               )
+               ]
             );
             ?>
          </a>

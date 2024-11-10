@@ -25,9 +25,9 @@ get_header();
          <h2><?php esc_html_e('Recent Posts', 'rlm_theme'); ?></h2>
          <?php
 
-         $recent_posts = new WP_Query(array(
+         $recent_posts = new WP_Query([
             'posts_per_page' => 5,
-         ));
+         ]);
 
          if ($recent_posts->have_posts()) :
             while ($recent_posts->have_posts()) :
