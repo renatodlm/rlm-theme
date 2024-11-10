@@ -195,3 +195,20 @@ function rlm_theme_widgets_init()
       ]
    );
 }
+
+add_filter('manage_posts_columns', 'add_thumbnail_column');
+function add_thumbnail_column($columns)
+{
+   $columns['thumbnail'] = __('Thumbnail', 'rlm_theme');
+   return $columns;
+}
+
+add_action('manage_posts_custom_column', 'display_thumbnail_column', 10, 2);
+function display_thumbnail_column($column, $post_id)
+{
+   if ($column === 'thumbnail')
+   {
+      $thumbnail = get_the_post_thumbnail($post_id, 'thumbnail', ['style' => 'width:50px;height:auto;']);
+      echo $thumbnail ? $thumbnail : __('No thumbnail', 'rlm_theme');
+   }
+}
