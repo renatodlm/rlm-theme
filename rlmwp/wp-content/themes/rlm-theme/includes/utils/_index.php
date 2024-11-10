@@ -137,7 +137,9 @@ class RLM__Utils
     */
    public static function load_class($class_name, $method = 'require_once')
    {
-      $class_path = self::path_resolve([dirname(__FILE__), 'includes', 'classes', "{$class_name}.php"]);
+      $class_path = self::path_resolve([dirname(THEME_BASE_PATH), 'includes', 'global', "{$class_name}.php"]);
+
+      debug($class_path);
 
       if (file_exists($class_path))
       {
@@ -225,6 +227,51 @@ class RLM__Utils
 
       return $args[0];
    }
+
+   /**
+    * @see render_svg() See the alias for full documentation.
+    */
+   public static function render_svg(string $file, string $classes = '', bool $echo = true, array $folders = ['assets', 'icons'])
+   {
+      $file        = str_replace('.svg', '', $file);
+      $file        = self::path_resolve($folders) . "{$file}.svg";
+      $svg_file    = get_theme_file_path($file);
+      $svg_content = '';
+
+      if (file_exists($svg_file))
+      {
+         $svg_content = file_get_contents($svg_file);
+
+         if (!empty($classes))
+         {
+            $classes = trim($classes);
+
+            if (stripos($svg_content, 'class="'))
+            {
+               $svg_content = str_replace('class="', 'class="' . $classes . ' ', $svg_content);
+            }
+            else
+            {
+               $svg_content = str_replace('<svg ', '<svg class="' . $classes . '" ', $svg_content);
+            }
+         }
+
+         $svg_content = str_replace('<svg ', '<svg aria-hidden="true" ', $svg_content);
+      }
+      else
+      {
+         self::debug('Icon not found: ' . $file);
+      }
+
+      if ($echo)
+      {
+         echo $svg_content;
+      }
+      else
+      {
+         return $svg_content;
+      }
+   }
 }
 
 
@@ -256,5 +303,33 @@ if (!function_exists('debug'))
    function debug(...$args)
    {
       return RLM__Utils::debug(func_get_args(), 'DEBUG_ARRAY_IN_SECOND_LEVEL');
+   }
+}
+
+if (!function_exists('render_svg'))
+{
+   /**
+    * Echo or return a SVG file content, changing classes if needed.
+    *
+    * ##### Description
+    *
+    * Code exemple:
+    * ```php
+    * render_svg('profile');
+    * # will try load:
+    * # assets/icons/profile.svg
+    * ```
+    *
+    * @param string $file File name to get on theme folder assets/icons.
+    * @param string $classes Optional. List of classes separated with spaces. Default is empty string.
+    * @param bool $echo Optional. If the content should be echo or return. Default is true.
+    *
+    * @return string|void Returns the SVG content if $echo is false
+    *
+    * @since 2.0.0
+    */
+   function render_svg(string $file, string $classes = '', bool $echo = true)
+   {
+      return RLM__Utils::render_svg($file, $classes, $echo);
    }
 }

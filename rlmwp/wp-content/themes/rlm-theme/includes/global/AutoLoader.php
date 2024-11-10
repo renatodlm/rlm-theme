@@ -55,18 +55,18 @@ if (!class_exists('RLM_Theme_AutoLoader'))
        * ```php
        * $RLMLoader->add_namespace(
        *    'RLM_Theme',
-       *    RLM__Utils::path_resolve([__DIR__, 'includes', 'entities'])
+       *    RLM__Utils::path_resolve([__DIR__, 'includes', 'classes'])
        * );
        * ```
        *
-       * Here `RLM_Theme` is the namespace; and `includes/entities` is the path to search for the respective file.
+       * Here `RLM_Theme` is the namespace; and `includes/classes` is the path to search for the respective file.
        *
        * Then when this class is required:
        * ```php
        * new RLM_Theme\Posts\Video();
        * ```
        *
-       * The autoloader will try to find the class file in `includes/entities/Posts/Video.php`
+       * The autoloader will try to find the class file in `includes/classes/Posts/Video.php`
        * ```
        *
        * @param string $prefix   The namespace prefix.
@@ -81,6 +81,7 @@ if (!class_exists('RLM_Theme_AutoLoader'))
          $base_dir .= DIRECTORY_SEPARATOR;
 
          $this->prefixes[$prefix][] = $base_dir;
+         debug($this->prefixes);
       }
 
       /**

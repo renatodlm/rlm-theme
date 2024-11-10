@@ -1,6 +1,9 @@
 <?php
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH'))
+{
+   exit;
+}
 
 // add_action('phpmailer_init', 'rlm_phpmailer_init');
 function rlm_phpmailer_init($phpmailer)

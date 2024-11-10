@@ -6,7 +6,10 @@
  * Type: In-house
  */
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH'))
+{
+   exit;
+}
 
 class RLM_Activity_Log_Register
 {

@@ -1,6 +1,9 @@
 <?php
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH'))
+{
+   exit;
+}
 
 add_action('wp_loaded', 'rlm_rewrite_url');
 function rlm_rewrite_url()

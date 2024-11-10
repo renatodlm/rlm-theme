@@ -6,6 +6,8 @@
  * @package rlm_theme
  */
 
+use RLM_Theme\AlpineExample\AlpineExample;
+
 get_header();
 
 ?>
@@ -19,16 +21,12 @@ get_header();
          <?php esc_html_e('This is a minimal WordPress theme template.', 'rlm_theme'); ?>
       </p>
 
-      <h3 class="text-lg mt-4 mb-2">
-         <?php esc_html_e('AlpineJS Example:', 'rlm_theme'); ?>
-      </h3>
-      <div x-data="{ open: false }" class="text-gray-500">
-         <button class="btn btn-primary" @click="open = ! open">Click to toggle content</button>
+      <?php
 
-         <div x-show="open">
-            Content...
-         </div>
-      </div>
+      $AlpineExample = new AlpineExample();
+      $AlpineExample->render();
+
+      ?>
    </div>
 </main>
 
