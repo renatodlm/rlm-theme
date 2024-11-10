@@ -47,7 +47,6 @@ namespace RLM_Theme\Classe\Classe;
 
 $classe = new Classe();
 $value = $classe->get();
-
 ```
 
 ---
