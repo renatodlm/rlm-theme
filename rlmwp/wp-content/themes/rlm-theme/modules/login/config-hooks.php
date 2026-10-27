@@ -31,7 +31,7 @@ add_filter('network_site_url', 'rlm_replace_login_url');
 add_filter('wp_redirect', 'rlm_replace_login_url');
 function rlm_replace_login_url($url)
 {
-   if (strrpos($url, 'wp-login.php') === false)
+   if (!is_string($url) || strpos($url, 'wp-login.php') === false)
    {
       return $url;
    }
@@ -55,7 +55,7 @@ function rlm_replace_login_url($url)
       $slug = "$slug/";
    }
 
-   if (strrpos($url, $slug) === false)
+   if ($slug !== '' && strpos($url, $slug) === false)
    {
       return str_replace('wp-login.php', $slug . LOGIN_ENDPOINT, $url);
    }

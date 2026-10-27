@@ -14,24 +14,56 @@ class RLM__Utils
     */
    public static function is_login()
    {
-      $request = parse_url(rawurldecode($_SERVER['REQUEST_URI']));
-      $login_endpoint = LOGIN_ENDPOINT;
+      $request_uri = '';
 
-      preg_match("/^\/([a-zA-Z0-9_-]+)?\/?{$login_endpoint}\/?$/i", $request['path'], $matches);
+      foreach (['REQUEST_URI', 'REDIRECT_URL'] as $server_key)
+      {
+         if (!empty($_SERVER[$server_key]) && is_string($_SERVER[$server_key]))
+         {
+            $request_uri = $_SERVER[$server_key];
+            break;
+         }
+      }
 
-      if (empty($matches))
+      if ($request_uri === '')
       {
          return false;
       }
 
-      if (str_starts_with($request['path'], "/$login_endpoint"))
+      $request = parse_url(rawurldecode($request_uri));
+      $path    = is_array($request) && isset($request['path']) && is_string($request['path']) ? $request['path'] : '';
+
+      if ($path === '')
+      {
+         return false;
+      }
+
+      $home = get_option('home');
+      $base = is_string($home) ? parse_url($home, PHP_URL_PATH) : '';
+
+      if (is_string($base))
+      {
+         $base = rtrim($base, '/');
+
+         if ($base !== '' && ($path === $base || strpos($path, $base . '/') === 0))
+         {
+            $path = substr($path, strlen($base));
+         }
+      }
+
+      $path = preg_replace('#/index\.php(?=/|$)#', '', $path);
+      $path = '/' . trim((string) $path, '/');
+
+      $endpoint = preg_quote(LOGIN_ENDPOINT, '#');
+
+      if (!preg_match('#^/(?:~[^/]+/)?(?:([A-Za-z0-9_-]+)/)?' . $endpoint . '/?$#i', $path, $matches))
+      {
+         return false;
+      }
+
+      if (empty($matches[1]) || strcasecmp($matches[1], LOGIN_ENDPOINT) === 0)
       {
          return true;
-      }
-
-      if (empty($matches[1]))
-      {
-         return false;
       }
 
       return $matches[1];
